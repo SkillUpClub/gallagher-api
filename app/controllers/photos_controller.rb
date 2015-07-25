@@ -30,10 +30,8 @@ class PhotosController < ApplicationController
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
   def update
-    @photo = Photo.find(params[:id])
-
     if @photo.update(photo_params)
-      head :no_content
+      render json: @photo, status: :ok, location: @photo
     else
       render json: @photo.errors, status: :unprocessable_entity
     end
@@ -44,7 +42,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
 
-    head :no_content
+    head :ok
   end
 
   private
@@ -54,6 +52,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params[:photo]
+    params.require(:photo).permit(:title, :description)
   end
 end
