@@ -5,6 +5,11 @@ gem 'rails-api'
 
 gem 'pg'
 
+# Tools
+gem 'dotenv-rails'
+gem 'faker'
+gem 'fabrication'
+
 group :development do
   gem 'spring'
 
