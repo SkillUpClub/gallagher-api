@@ -2,21 +2,34 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
 gem 'rails-api'
-gem 'spring', group: :development
 
 gem 'pg'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Tools
+gem 'dotenv-rails'
+gem 'faker'
+gem 'fabrication'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development do
+  gem 'spring'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+  # Console
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'hirb-unicode'
+  gem 'awesome_print'
 
-# Deploy with Capistrano
-# gem 'capistrano', :group => :development
+  # Chrome extensions
+  gem 'meta_request', '~> 0.3'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'annotate'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'database_cleaner'
+  gem 'fuubar'
+end
