@@ -4,6 +4,7 @@ gem 'rails', '4.2.3'
 gem 'rails-api'
 
 gem 'pg'
+gem "active_model_serializers",  '0.10.0.rc2'
 
 # Tools
 gem 'dotenv-rails'
