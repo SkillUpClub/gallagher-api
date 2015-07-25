@@ -26,3 +26,10 @@ group :development do
 
   gem 'annotate'
 end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'database_cleaner'
+  gem 'fuubar'
+end
