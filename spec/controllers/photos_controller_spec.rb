@@ -10,7 +10,7 @@ RSpec.describe PhotosController, type: :controller do
     end
 
     it 'returns array of Photos' do
-      expect(json.count).to eq @photos.count
+      expect(json['photos'].count).to eq @photos.count
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe PhotosController, type: :controller do
     end
 
     it 'returns the updated Photo object' do
-      expect(json['title']).to eq(new_photo.title)
+      expect(json['photo']['title']).to eq(new_photo.title)
     end
   end
 
